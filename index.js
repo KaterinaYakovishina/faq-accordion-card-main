@@ -3,17 +3,18 @@ const questions = document.querySelectorAll(".question");
 const arrows = document.querySelectorAll("#arrowIcon");
 let currentQuestion;
 let currentAnswer;
-//answers collapsed
+
+
 answers.forEach((answer) => {
   answer.style.display = "none";
 });
-//guestion id = answer id
+
 questions.forEach((question, index) => {
   question.setAttribute("id", index);
   question.addEventListener("click", showAnswer);
 });
 
-//toggle
+
 function showAnswer(question) {
   currentQuestion = question.target.id;
   currentAnswer = answers[currentQuestion];
@@ -24,8 +25,12 @@ function showAnswer(question) {
     questions[currentQuestion].style.fontWeight = "700";
     currentAnswer.style.display = "initial";
   } else {
+
     arrows[currentQuestion].removeAttribute('style');
     questions[currentQuestion].removeAttribute('style');
     currentAnswer.style.display = "none";
+  }
+
+
 }
-}
+
