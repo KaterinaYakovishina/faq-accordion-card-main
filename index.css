@@ -1,0 +1,122 @@
+* {
+    display: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --tx-pr-blue: hsl(238, 29%, 16%);
+    --tx-pr-red: hsl(14, 88%, 65%);
+    --tx-nt-grayish-blue: hsl(237, 12%, 33%);
+    --tx-nt-dark-grayish-blue: hsl(240, 6%, 50%);
+    --dividers-light-grayish-blue: hsl(240, 5%, 91%);
+    --bk-gradient-soft-violet: hsl(273, 75%, 66%);
+    --bk-gradient-soft-blue: hsl(240, 73%, 65%);
+}
+
+body {
+    height: 100dvh;
+    background: linear-gradient(var(--bk-gradient-soft-violet), var(--bk-gradient-soft-blue));
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+}
+
+main {
+    height: 71%;
+    width: 80%;
+    background-color: white;
+    border-radius: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.questions {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    width: 75%
+}
+
+.images {
+    grid-column: 1 / 2;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: contain;
+    background-position: bottom -10vh left -8vw;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.woman-container {
+    position: relative;
+
+}
+
+#woman {
+    position: absolute;
+    width: 40vw;
+    left: -8vw;
+    top: 9vh;
+    border: 1px solid red;
+
+}
+
+.box-container {
+    position: absolute;
+    border: 3px solid yellow;
+    left: -11%;
+    top: 43%;
+    z-index: 2;
+    height: min-content;
+    width: min-content;
+
+}
+
+#box {
+    position: relative;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.question-block {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+h1 {
+    color: var(--tx-pr-blue);
+}
+
+.question {
+    font-size: 14px;
+    color: var(--tx-nt-grayish-blue);
+}
+
+.answer {
+    color: var(--tx-nt-dark-grayish-blue);
+}
+
+hr {
+    color: var(--dividers-light-grayish-blue);
+}
+
+.question:hover {
+    color: var(--tx-pr-red);
+    font-weight: 700;
+    cursor: pointer;
+}
