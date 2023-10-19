@@ -31,21 +31,22 @@ main {
     flex-direction: raw;
     gap: 2rem;
 
-
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-
-
 .images {
     background-image: url(./images/bg-pattern-desktop.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right 2vw bottom -8vh;
+}
 
+.woman-container {
+    position: relative;
+    overflow: hidden;
 
 }
 
@@ -55,17 +56,7 @@ main {
     margin-bottom: 25%;
     width: 120%;
 
-
 }
-
-.woman-container {
-    overflow: hidden;
-
-}
-
-/* .box-container {
-    might be neccessary for desktop;
-} */
 
 #box {
     width: 20%;
@@ -109,33 +100,56 @@ header {
     padding-bottom: 2rem;
 }
 
+/* styling */
+h1 {
+    color: var(--tx-pr-blue);
+}
+
+.question {
+    font-size: 14px;
+    color: var(--tx-nt-grayish-blue);
+}
+
+.answer {
+    color: var(--tx-nt-dark-grayish-blue);
+}
+
+hr {
+    color: var(--dividers-light-grayish-blue);
+}
+
+.question:hover {
+    color: var(--tx-pr-red);
+    font-weight: 700;
+    cursor: pointer;
+}
 
 /* mobile */
 @media screen and (max-width: 800px) {
 
     main {
-        width: 80%;
-        background-color: white;
-        border-radius: 2rem;
         margin-inline: auto;
         margin-top: 10rem;
         padding-inline: 2rem;
         padding-bottom: 2rem;
-        display: flex;
         flex-direction: column;
         gap: 0.5rem;
 
     }
 
     .images {
-        background-image:
-            url(./images/bg-pattern-mobile.svg);
+        background-image: url(./images/bg-pattern-mobile.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: unset;
         padding-bottom: 2.5rem;
 
 
+    }
+
+    .woman-container {
+        position: relative;
+        overflow: visible;
     }
 
     #woman {
@@ -146,10 +160,7 @@ header {
 
     }
 
-    .woman-container {
-        position: relative;
-        overflow: visible;
-    }
+
 
 
     #box {
@@ -179,28 +190,4 @@ header {
         text-align: center;
     }
 
-}
-
-/* styling */
-h1 {
-    color: var(--tx-pr-blue);
-}
-
-.question {
-    font-size: 14px;
-    color: var(--tx-nt-grayish-blue);
-}
-
-.answer {
-    color: var(--tx-nt-dark-grayish-blue);
-}
-
-hr {
-    color: var(--dividers-light-grayish-blue);
-}
-
-.question:hover {
-    color: var(--tx-pr-red);
-    font-weight: 700;
-    cursor: pointer;
 }
