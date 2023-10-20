@@ -1,12 +1,16 @@
 const answers = document.querySelectorAll(".answer-block");
 const questions = document.querySelectorAll(".question");
 const arrows = document.querySelectorAll("#arrowIcon");
-let currentQuestion;
+let currentQuestionId;
 let currentAnswer;
+let numberOfOpenQuestions = 0;
+let openAswersList = [];
+let openQuestionsList = [];
 
 
-answers.forEach((answer) => {
+answers.forEach((answer, index) => {
   answer.style.display = "none";
+  answer.setAttribute('id', index);
 });
 
 questions.forEach((question, index) => {
@@ -14,23 +18,32 @@ questions.forEach((question, index) => {
   question.addEventListener("click", showAnswer);
 });
 
-
 function showAnswer(question) {
-  currentQuestion = question.target.id;
-  currentAnswer = answers[currentQuestion];
+  currentQuestionId = question.target.id;
+  currentAnswer = answers[currentQuestionId];
 
+    
   if (currentAnswer.style.display === "none") {
-    arrows[currentQuestion].style.transform = "rotate(180deg)";
-    questions[currentQuestion].style.color = "var(--tx-pr-blue)";
-    questions[currentQuestion].style.fontWeight = "700";
+     
+    arrows[currentQuestionId].style.transform = "rotate(180deg)";
+    questions[currentQuestionId].style.color = "var(--tx-pr-blue)";
+    questions[currentQuestionId].style.fontWeight = "700";
     currentAnswer.style.display = "initial";
-  } else {
+    openAswersList.push(currentAnswer);
+    openQuestionsList.push(questions[currentQuestionId]);
+    numberOfOpenQuestions += 1;
+       
+  } 
 
-    arrows[currentQuestion].removeAttribute('style');
-    questions[currentQuestion].removeAttribute('style');
-    currentAnswer.style.display = "none";
+ if (numberOfOpenQuestions === 2) {
+    openAswersList[0].removeAttribute('style');
+    openQuestionsList[0].removeAttribute('style');
+    openAswersList[0].style.display = "none";
+    numberOfOpenQuestions -= 1;
+    openAswersList.shift(openAswersList[0]);   
+    openQuestionsList.shift(openQuestionsList[0]);
+  }
+ 
   }
 
-
-}
-
+ 
