@@ -54,8 +54,7 @@ function showAnswer(question) {
     openQuestionsList.shift(openQuestionsList[0]);
     transformedArrows.shift(transformedArrows[0]);
   }
- 
-console.log(transformedArrows)
+
     
   }
 
