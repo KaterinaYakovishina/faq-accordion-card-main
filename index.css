@@ -17,13 +17,15 @@
 body {
     height: 100dvh;
     background: linear-gradient(var(--bk-gradient-soft-violet), var(--bk-gradient-soft-blue));
+    background-attachment: fixed;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 12px;
+    overflow: hidden;
 }
 
 /* desktop */
 main {
-    height: fit-content;
+    height: 75%;
     width: 80%;
     background-color: white;
     display: flex;
@@ -125,15 +127,33 @@ hr {
 }
 
 /* mobile */
+
+@media screen and (max-width: 900px) {
+    body {
+        overflow: visible;
+    }
+    main {
+        height: min-content;
+    }
+
+    #box {
+        width: 20%;
+        position: absolute;
+        top: 35%;
+        left: -12%;
+
+    }
+}
+
 @media screen and (max-width: 800px) {
 
     main {
-        margin-inline: auto;
         margin-top: 10rem;
         padding-inline: 2rem;
         padding-bottom: 2rem;
         flex-direction: column;
         gap: 0.5rem;
+
 
     }
 
@@ -143,8 +163,6 @@ hr {
         background-repeat: no-repeat;
         background-position: unset;
         padding-bottom: 2.5rem;
-
-
     }
 
     .woman-container {
@@ -159,8 +177,6 @@ hr {
         margin-left: unset;
 
     }
-
-
 
 
     #box {
